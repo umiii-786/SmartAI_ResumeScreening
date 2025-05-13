@@ -11,7 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+   <link rel="stylesheet" href="{{url_for('static',filename='css/ColorTemplate.css')}}">
    <link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}">
+   <link rel="stylesheet" href="{{url_for('static',filename='css/navbar_home_res.css')}}">
 
 </head>
 
@@ -34,7 +36,7 @@
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
 
-          <button class="btn btn-primary">Get in touch</button>
+          <button class="btn btn-primary"><a href="/login" style="color: white;">Login</a></button>
         </nav>
       </div>
     </div>
@@ -107,7 +109,7 @@
 
           <div class="about-bottom">
             <figure class="about-bottom-banner">
-              <img src="https://i.postimg.cc/nzjhFvtq/about-banner.png" alt="about banner" class="about-banner">
+              <img src="{{url_for('static',filename='image/interview.png')}}" alt="about banner" class="about-banner">
             </figure>
 
             <div class="about-bottom-content">

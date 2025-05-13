@@ -1,0 +1,41 @@
+
+
+:root {
+    --maximum-yellow-red: hsl(37, 100%, 68%);
+    --royal-blue-dark: hsl(231, 61%, 22%);
+    --silver-chalice: hsl(0, 0%, 70%);
+    --oxford-blue: hsl(231, 100%, 8%);
+    --bittersweet: hsl(33.41deg 100% 50%);
+    /* border-color: hsl(33.41deg 100% 50%); */
+    color: var(--white);;
+    --french-rose: hsl(342, 90%, 61%);
+    --davys-gray: hsl(180, 3%, 28%);
+    --cool-gray: hsl(240, 13%, 62%);
+    --platinum: hsl(0, 0%, 92%);
+    --white-2: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --rythm: hsl(240, 9%, 53%);
+  
+    --ff-poppins: "Poppins", sans-sarif;
+  
+    --fs-1: 32px;
+    --fs-2: 26px;
+    --fs-3: 22px;
+    --fs-4: 18px;
+    --fs-5: 15px;
+    --fs-6: 14px;
+  
+    --fw-700: 700;
+    --fw-600: 600;
+    --fw-500: 500;
+  
+    --transition: 0.25s ease-in-out;
+  }
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

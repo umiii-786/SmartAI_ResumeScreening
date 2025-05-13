@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+  }
+
+  /* From uiverse.io by @FrM-bot */
+  .card {
+    width: 200px;
+    height: min-content;
+    transition: all .3s;
+    position: relative;
+    border-radius: .5rem 2rem;
+    box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.5);
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+
+
+  .img:hover {
+    transform: scale(1.3);
+  }
+
+  .img-container {
+    display: flex
+;
+  border-radius: .5rem 2rem;
+  height: 200px;
+  overflow: hidden;
+  transition: all .3s;
+  background: linear-gradient(to right, #ff8e00d4, #219fc3);
+  flex-direction: column;
+  justify-content: space-around;
+  }
+
+  .applyBtn {
+    position: relative;
+    bottom: .5rem;
+    left: .5rem;
+    text-align: start;
+    padding: .5rem 1em;
+    width: 90%;
+    transition: all 0.5s ease;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    backdrop-filter: blur(.1rem);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: .5rem 2rem;
+  }
+
+  .applyBtn:hover {
+    transform: perspective(100px) translateX(7px) rotateX(3deg) rotateY(3deg) scale(1);
+    box-shadow: none;
+  }
+
+  .title {
+    color: aliceblue;
+  }
+
+  #jobListing {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* align-items: center; */
+  }
+
+  .maincontainer {
+    width: 80%;
+  }
+
+  .h1 {
+    width: 80%;
+    font-family: monospace;
+    font-size: 30px;
+  }
+
+  .btn a {
+    text-decoration: none;
+    color: white;
+
+  }
+
+  .job_btn {
+    align-self: flex-end;
+    /* margin-right: 100px; */
+  }
+
+  .firstSpan {
+    color: black;
+    font-weight: 700;
+    margin-top: 15px;
+  }
+
+  .cardh1 {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .secondSpan {
+    color: white;
+    font-family: sans-serif;
+  }
+
+  .content {
+    padding: 0px 20px;
+  }

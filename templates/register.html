@@ -10,7 +10,8 @@
 
     
     <!-- Login form -->
-    <form action="" method="post" id="Login">
+    <div class="alert"><span>⚠️</span><span class="alertContent"></span> <span class="alertCross" onclick="hideAlert()">X</span></div>
+    <form action="/register" method="post" id="Login">
         <!-- Left section of the form -->
         <div class="left">
           <div>
@@ -27,24 +28,31 @@
           <div>
             <!-- Login heading -->
             <h1>Register Your Self</h1>
-  
+            <!-- <div class="buttons"></div> -->
             <!-- Username input field -->
-            <input type="text" name="Username" id="" placeholder="Username" />
+             <form action="/login" method="post">
+
+            
+            <input type="text" name="Username"  placeholder="Username" class="FieldInputs"/>
+            <label class="errorLabel"></label>
             <!-- <span class="material-symbols-outlined person"> person </span> -->
 
 
-            <input type="email" name="Username" id="" placeholder="Email" />
+            <input type="email" name="email"  placeholder="Email" class="FieldInputs"/>
+            <label class="errorLabel"></label>
             <!-- <span class="material-symbols-outlined person"> Email </span> -->
   
             <!-- Password input field -->
-            <input type="password" name="Password" id="" placeholder="Password" />
+            <input type="password" name="Password"  placeholder="Password" class="FieldInputs"/>
+            <label class="errorLabel"></label>
             <!-- <span class="material-symbols-outlined lock"> lock </span> -->
   
             <!-- Forgot password link -->
   
             <!-- Login button -->
-            <button type="submit">Register</button>
+            <button type="button" onclick="CheckEmpty()">Register</button>
   
+          </form>
             <!-- Social login options -->
             <!-- <p>or login with social platforms</p> -->
             
@@ -53,7 +61,8 @@
       </form>
   
 
-          
+  <script src="{{url_for('static', filename='js/loginformValidate.js')}}"></script>      
 </body>
+
 </html>
     

@@ -1,0 +1,292 @@
+@media (min-width: 450px) {
+    :root {
+      --fs-1: 60px;
+    }
+  
+    .h1,
+    .h2 {
+      font-weight: var(--fw-700);
+    }
+    .btn {
+      padding-block: 15px;
+    }
+  
+    .navbar {
+      left: auto;
+      width: 300px;
+    }
+  
+    .hero {
+      padding: 140px 0 160px;
+    }
+    .shape-content {
+      top: -70px;
+      right: -260px;
+    }
+  
+    .about-card .card-title {
+      padding-inline: 40px;
+    }
+    .about-bottom-banner {
+      max-width: 400px;
+      margin-inline: auto;
+      margin-bottom: 40px;
+    }
+    .about-bottom-content {
+      padding-inline: 50px;
+    }
+  
+    .features .h2 {
+      --fs-2: 32px;
+    }
+  
+    .cta-title {
+      --fs-1: 42px;
+    }
+    .cta-form {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 30px;
+    }
+    .cta input {
+      margin-bottom: 0;
+    }
+    .cta .btn-secondary {
+      min-width: max-content;
+    }
+  
+    .contact-title {
+      --fs-2: 32px;
+    }
+    .contact-banner {
+      max-width: 300px;
+      margin-inline: auto;
+    }
+  }
+  
+  @media (min-width: 560px) {
+    .container {
+      max-width: 550px;
+      margin-inline: auto;
+    }
+  
+    .navbar-wrapper {
+      position: relative;
+    }
+    .navbar {
+      top: calc(100% + 15px);
+      right: 0;
+    }
+  
+    .hero-content,
+    .about-bottom-content {
+      text-align: left;
+    }
+    .hero .btn-primary,
+    .about-bottom .btn-secondary {
+      margin-inline: 0;
+    }
+    .shape-content {
+      top: -156px;
+      right: -152px;
+    }
+  
+    .footer-brand {
+      margin-bottom: 40px;
+    }
+    .footer-link-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    :root {
+      --fs-2: 35px;
+      --fs-4: 20px;
+    }
+  
+    .container {
+      max-width: 740px;
+    }
+  
+    .about-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .about-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .about-card .card-title {
+      padding-inline: 0;
+    }
+  
+    .contact-title {
+      --fs2: 42px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 950px;
+    }
+  
+    .navbar-menu-btn {
+      display: none;
+    }
+  
+    .navbar {
+      max-height: unset;
+      visibility: visible;
+      position: static;
+      width: auto;
+      background: none;
+      pointer-events: all;
+      overflow: visible;
+      display: flex;
+    }
+  
+    .navbar-list {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: 20px;
+    }
+  
+    .nav-link {
+      opacity: 1;
+      padding: 0 15px;
+    }
+    .navbar .btn-primary {
+      display: block;
+    }
+  
+    .hero-content {
+      max-width: 550px;
+    }
+  
+    .hero-banner {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 600px;
+      padding-top: 500px;
+      background: url("../image/main.jpg") no-repeat;
+      /* background: url("https://i.postimg.cc/htTB3ywY/hero-banner.png") no-repeat; */
+      background-size: contain;
+    }
+
+ 
+  
+    .about-top .section-text {
+      max-width: 650px;
+      margin-inline: auto;
+    }
+    .about-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .about-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .about-bottom-banner {
+      margin-bottom: 0;
+      height: 330px;
+    }
+    .about-bottom-content {
+      padding-inline: 0;
+      width: 50%;
+    }
+  
+    .features :is(.section-title .section-text) {
+      max-width: 650px;
+      margin-inline: auto;
+    }
+    .features-item {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    .features-item:last-child {
+      flex-direction: row-reverse;
+    }
+    .features-item-banner {
+      margin-inline: 0;
+      margin-bottom: 0;
+    }
+    .feature-item-content {
+      width: 50%;
+      text-align: left;
+    }
+  
+    .cta-card > * {
+      max-width: 500px;
+      margin-inline: auto;
+    }
+  
+    .contact .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+    }
+    .contact-content {
+      max-width: 400px;
+    }
+    .contact-title {
+      text-align: left;
+    }
+    .contact-form {
+      width: 50%;
+    }
+  
+    .footer-top .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+    }
+    .footer-brand,
+    .footer-link-list:not(:last-child) {
+      margin-bottom: 0;
+    }
+    .footer-link-box {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    :root {
+      --fs-2: 42px;
+    }
+  
+    .container {
+      max-width: 1150px;
+    }
+  
+    .hero-banner {
+      right: 100px;
+    }
+  
+    .about-bottom-banner {
+      height: 400px;
+    }
+  
+    .features .h2 {
+      --fs-2: 42px;
+    }
+    .features :is(.section-text, .section-title) {
+      max-width: 850px;
+    }
+  }
+

@@ -5,103 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/ColorTemplate.css')}}">
   <link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/jobCard.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/navbar_home_res.css')}}">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
 
-    /* From uiverse.io by @FrM-bot */
-    .card {
-      width: 200px;
-      height: min-content;
-      transition: all .3s;
-      position: relative;
-      border-radius: .5rem 2rem;
-      box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.5);
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-
-
-    .img:hover {
-      transform: scale(1.3);
-    }
-
-    .img-container {
-      display: flex
-;
-    border-radius: .5rem 2rem;
-    height: 200px;
-    overflow: hidden;
-    transition: all .3s;
-    background: linear-gradient(to right, #9f080854, #ff6661);
-    flex-direction: column;
-    justify-content: space-around;
-    }
-
-    .applyBtn {
-      position: relative;
-      bottom: .5rem;
-      left: .5rem;
-      text-align: start;
-      padding: .5rem 1em;
-      width: 90%;
-      transition: all 0.5s ease;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      backdrop-filter: blur(.1rem);
-      background-color: rgba(0, 0, 0, 0.2);
-      border-radius: .5rem 2rem;
-    }
-
-    .applyBtn:hover {
-      transform: perspective(100px) translateX(7px) rotateX(3deg) rotateY(3deg) scale(1);
-      box-shadow: none;
-    }
-
-    .title {
-      color: aliceblue;
-    }
-
-    #jobListing {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
-    }
-
-    .maincontainer {
-      width: 80%;
-    }
-
-    .h1 {
-      width: 80%;
-      font-family: monospace;
-      font-size: 30px;
-    }
-
-    .btn a {
-      text-decoration: none;
-      color: white;
-
-    }
-
-    .job_btn {
-      align-self: flex-end;
-      margin-right: 100px;
-    }
   </style>
   <style>
     /* From Uiverse.io by adamgiebl */
     .submitButton {
       font-family: inherit;
       font-size: 20px;
-      background: #ff6661;
+      background: #21a0c1;
       color: white;
       padding: 0.7em 1em;
       padding-left: 0.9em;
@@ -210,6 +127,8 @@
       visibility: hidden;
     }
 
+    /* }
+
     .cross {
       font-weight: bolder;
       position: absolute;
@@ -217,19 +136,22 @@
       right: 50px;
       font-size: 20px;
       cursor: pointer;
-    }
+    } */
 
     #formSection {
-      box-shadow: 0px 0px 15px 0px gray;
-      width: 400px;
-      min-height: 400px;
+      /* box-shadow: 0px 0px 5px 0px gray; */
+      /* width: 400px; */
+      /* min-height: 400px; */
       border-radius: 8px;
       z-index: 10;
-      position: absolute;
-      top: -700px;
+      /* position: absolute; */
+      /* top: -700px; */
       transition: 1s ease-in;
       margin-bottom: 20px;
-      background-color: #ddd1d0f5;
+      /* background-color: #ddd1d0f5; */
+      display: flex;
+      flex-direction: column;
+      /* display: none; */
 
     }
 
@@ -242,6 +164,7 @@
       /* align-items: center; */
       padding: 20px;
       position: relative;
+      display: none;
     }
 
     .nice-form-group {
@@ -262,16 +185,16 @@
     }
 
     .formheading {
-      color: #ff6661;
+      color: #21a0c1;
       font-family: sans-serif;
     }
 
     .page-content {
       display: flex;
       flex-direction: column;
-      /* justify-content: center; */
-      align-items: center;
-      /* padding-bottom: 20px; */
+
+      width: 80%;
+      margin: auto;
 
     }
 
@@ -323,7 +246,7 @@
 
     .loader2 {
       width: 30px;
-      height:30px;
+      height: 30px;
       animation-delay: 0.2s;
     }
 
@@ -335,7 +258,7 @@
 
     .loader4 {
       width: 70px;
-      height:70px;
+      height: 70px;
       animation-delay: 0.4s;
     }
 
@@ -360,22 +283,163 @@
         transform: scale(1);
       }
     }
-    .firstSpan{
-      color: black;
-      font-weight: 700;
-      margin-top: 15px;
+
+
+    .line {
+      display: flex;
+      justify-content: space-between;
     }
-    .cardh1{
+
+    .AnalzeAns {
       display: flex;
       flex-direction: column;
-     
     }
-    .secondSpan{
-      color: white;
+
+    .ansLabel {
+      margin: 0px;
+      display: flex;
+    }
+
+    .DescSpan1 {
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 0px;
+      color: black;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .DescSpan2 {
+      color: #ff8e00;
+      font-weight: bolder;
+    }
+  </style>
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    #Clogo {
+      display: none;
+    }
+
+    .uploadImage {
+      width: 150px;
+      height: 150px;
+      cursor: pointer;
+    }
+
+
+
+    .recLabels {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 15px;
+
+    }
+
+    .companyResLabel {
+      font-size: 15px;
+      color: #21a0c1;
       font-family: sans-serif;
     }
-    .content{
-      padding: 0px 20px;
+
+    .eachField {
+      margin-bottom: 15px;
+      /* margin: 10px 0px; */
+      width: 90%;
+    }
+
+    .company_Form_inputs {
+      padding: 10px;
+      box-shadow: 0px 0px 10px 0px gray;
+    }
+
+    .recrutementFormParent {
+      width: 40%;
+      /* width: 500px; */
+      position: absolute;
+      top: -300px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.5s;
+      /* min-height: 100vh; */
+    }
+
+    .recrutementForm {
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: center; */
+      box-shadow: 0px 0px 7px 0px #21a0c1;
+      padding: 20px 20px;
+      background-color: aliceblue
+    }
+
+    .uploadLogo_sec {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      margin-bottom: 0px;
+    }
+
+    .deleteRecForm {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      color: black;
+      font-family: cursive;
+      cursor: pointer;
+    }
+
+    .selectedImageName {
+      color: green;
+      font-size: 15px;
+    }
+
+    .CompanyFormError {
+      color: red;
+      font-size: 14px;
+    }
+
+    .companyInfo {
+      display: flex;
+      align-items: center;
+      color: black;
+      width: 400px;
+      flex-direction: column;
+    }
+
+    .companyLogo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px black;
+    }
+
+    .companyLogo img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .companyName {
+      font-family: sans-serif;
+      font-size: 25px;
+      font-weight: 900;
+      color: #ff8e00;
+
+    }
+
+    .companyAbout {
+      text-align: center;
     }
   </style>
 </head>
@@ -406,11 +470,69 @@
 
   <main class="page-content">
     <section id="formSection">
+
+      {% if Is_company=="False" %}
+      <button class="job_btn switch_to_recruter btn  btn-primary" onclick="RecruterFormToggle()">Registered As Company
+      </button>
+      <div class="recrutementFormParent">
+
+
+
+        <form action="/user/{{id}}/company" method="POST" enctype="multipart/form-data" class="recrutementForm">
+          <span class="deleteRecForm" onclick="RecruterFormToggle()">X</span>
+          <div class="eachField uploadLogo_sec">
+            <img src="{{ url_for('static', filename='image/Clogobg.png') }}" alt="" class="uploadImage"
+              onclick="selectImage()">
+            <label class="recLabels" onclick="selectImage()">Upload Company Logo</label>
+            <label class="selectedImageName"></label>
+            <input type="file" name="Clogo" id="Clogo" class=" companyInputs" accept=".png, .jpg, .jpeg"
+              onchange="selectedLogo()">
+          </div>
+          <div class="eachField">
+            <label class="companyResLabel">Enter Company Name</label>
+            <input type="text" class="company_Form_inputs companyInputs" name="Cname">
+          </div>
+          <div class="eachField">
+            <label class="companyResLabel">About Company</label>
+            <textarea rows="3" class="company_Form_inputs companyInputs" name="Cabout"></textarea>
+            <!-- <input type="text" > -->
+          </div>
+          <button class="submitButton" type="button" onclick="SubmitCompanyData()">
+            <div class="svg-wrapper-1">
+              <div class="svg-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <span>submit</span>
+          </button>
+          <!-- <button >Submit</button> -->
+          <label class="CompanyFormError"></label>
+        </form>
+      </div>
+      {% else %}
+      <div class="companyInfo">
+        <div class="companyLogo">
+          <img src='./upload/{{companyInfo[1]}}' alt="" srcset="">
+        </div>
+        <h4 class="companyName">{{companyInfo[2]}}</h4>
+        <p class="companyAbout">{{companyInfo[3]}}</p>
+      </div>
+      <button class="job_btn btn  btn-primary" onclick="showJobForm()">Create Job</button>
+
+
+      <form action="/company/{{companyInfo[0]}}/job" method="post" class="jobForm">
       <div class="fields">
 
 
-        <span class="cross" onclick="deleteForm()">X</span>
+        <!-- <span class="cross" onclick="deleteForm()">X</span> -->
         <!-- <div class="href-target" id="input-types"></div> -->
+
+       
         <h1 class="formheading">
           Create Job Post
         </h1>
@@ -431,26 +553,38 @@
         </div>
 
         <div class="nice-form-group">
-          <div id="loader">
-            <div class="circle"></div>
-            <div class="loader1"></div>
-            <div class="loader2"></div>
-            <div class="loader3"></div>
-            <div class="loader4"></div>
+          <div class="line">
+            <div class="AnalzeAns">
+              <label class="ansLabel"><span class="DescSpan1">Description Seem Like :</span><span
+                  class="DescSpan2"></span></label>
+              <label class="ansLabel"><span class="DescSpan1">Description Perfection AI Score :</span><span
+                  class="DescSpan2"></span></label>
+            </div>
+
+            <div id="loader">
+              <div class="circle"></div>
+              <div class="loader1"></div>
+              <div class="loader2"></div>
+              <div class="loader3"></div>
+              <div class="loader4"></div>
+            </div>
+
+            <label class="descriptionBtn" ><span>Job Description </span>
+              <button  onclick="AnalyzeDescription()" type="button"
+                class="analyzeButton">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15v-4H8l4-6v4h3l-4 6z"></path>
+                </svg>
+              </button>
+            </label>
+
           </div>
-          <label class="descriptionBtn" onclick="AnalyzeDescription()"><span>Job Description </span><button
-              class="analyzeButton">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15v-4H8l4-6v4h3l-4 6z"></path>
-              </svg>
-            </button>
-          </label>
-          <textarea rows="10" placeholder="Write Your Job Description" class="inputField"></textarea>
+          <textarea rows="10" placeholder="Write Your Job Description" name="Jobdesc" class="inputField"></textarea>
           <label class="error"></label>
         </div>
         <!-- <button class="btn btn-primary"><a href="/signout">Analyze Description</a></button> -->
 
-        <button class="submitButton">
+        <button class="submitButton" type="button" onclick="submitJobForm()">
           <div class="svg-wrapper-1">
             <div class="svg-wrapper">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -465,20 +599,26 @@
         </button>
       </div>
 
+    </form>
+
+      {% endif %}
+
+
     </section>
 
 
 
+
     <section id="jobListing">
-      <button class="job_btn btn  btn-primary" onclick="showJobForm()">Create Job</button>
       <h3 class="h1">Your Previous Job Posts</h3>
       <div class="maincontainer">
         <div class="card">
           <div class="img-container">
             <div class="content">
 
-              <h3 class="jobname cardh1"><span class="firstSpan">Role:</span><span class="secondSpan">Software Engineering</span></h3>
-              <h5 class="jobloc cardh1"><span  class="firstSpan">Loc:</span><span class="secondSpan">Pakistan</span></h5>
+              <h3 class="jobname cardh1"><span class="firstSpan">Role:</span><span class="secondSpan">Software
+                  Engineering</span></h3>
+              <h5 class="jobloc cardh1"><span class="firstSpan">Loc:</span><span class="secondSpan">Pakistan</span></h5>
               <!-- <h6 class="jobloc"><span>Loc:</span><span>Pakistan</span></h3> -->
             </div>
             <!-- <div class="img">
@@ -493,24 +633,93 @@
       </div>
     </section>
 
-    <form action="" method="post" enctype="application/x-www-form-urlencoded"></form>
   </main>
 
   <script src="{{ url_for('static', filename='js/home.js') }}"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script>
-    let formSection = document.getElementById('formSection')
+    let fieldsdiv = document.querySelector('.fields')
     let errosDiv = document.querySelectorAll('.error')
     let fields = document.querySelectorAll('.inputField')
-    let loader=document.getElementById('loader')
-    async function AnalyzeDescription() {
+    let loader = document.getElementById('loader')
+    let desc_spans = document.querySelectorAll('.DescSpan2')
+    let desc_first_spans = document.querySelectorAll('.DescSpan1')
+    let LogoUploader = document.getElementById('Clogo')
+    let companyInputs = document.querySelectorAll('.companyInputs')
 
-      if (fields[2].value == "") {
-        errosDiv[2].innerHTML = "Description Should not Be Empty"
+    function submitJobForm(){
+      console.log('hello ')
+      let check=false
+       for(let i=0;i<fields.length;i++){
+          if(fields[i].value==""){
+            errosDiv[i].innerHTML="field should not be Empty"
+            check=true
+          }
+          else{
+            errosDiv[i].innerHTML=""
+          }
+       }
+       if(fields[2].value.length<100){
+        errosDiv[2].innerHTML="Description Shoud be Max 100 Characters "
+        check=true
+      }
+
+       if(check){
+            errosDiv.innerHTML="Plz Fill All the Fields Before Submitting"
+       }
+       else{
+            document.querySelector('.jobForm').submit()
+       }
+    }
+    function SubmitCompanyData() {
+      let check = true;
+
+      for (let i = 0; i < companyInputs.length; i++) {
+        if (companyInputs[i].value == "") {
+          check = false
+        }
+      }
+      if (check) {
+        document.querySelector('.recrutementForm').submit()
       }
       else {
-        loader.style.display="flex"
+        document.querySelector(".CompanyFormError").innerHTML = "Fields Should Not be Empty"
+      }
+    }
+
+    function RecruterFormToggle() {
+      let recrutementForm = document.querySelector(".recrutementFormParent")
+      let style = window.getComputedStyle(recrutementForm)
+      if (style['top'] == '-300px') {
+        recrutementForm.style.top = "300px"
+      }
+      else {
+        recrutementForm.style.top = "-300px"
+
+      }
+    }
+    function selectedLogo() {
+      let imageName = document.querySelector('.selectedImageName')
+      if (LogoUploader.value == "") {
+        imageName.innerHTML = ""
+      }
+      else {
+        imageName.innerHTML = LogoUploader.value
+
+      }
+    }
+    function selectImage() {
+      LogoUploader.click()
+    }
+
+    async function AnalyzeDescription() {
+      console.log('description running ')
+      if (fields[2].value == "" || fields[2].value.length < 100) {
+        errosDiv[2].innerHTML = "Description Should not Be Empty and must be greater then 100 characters"
+      }
+      else {
+        loader.style.display = "flex"
         const formData = new URLSearchParams();
         let description = fields[2].value
         formData.append("description", description);
@@ -522,21 +731,25 @@
           method: "POST",
           body: formData
         })
-        // alert(res)
-      const data = await res.text()
-      loader.style.display="none"
-      // alert(data)
-      console.log(data)
+        let data = await res.text()
+        data = JSON.parse(data)
+        for (let i = 0; i < data.length; i++) {
+          desc_first_spans[i].style.opacity = 1
+          desc_spans[i].innerHTML = data[i]
+        }
+        loader.style.display = "none"
+
+        // console.log(data)
       }
-     
-    }
-    function showJobForm() {
-      formSection.style.top = "110px"
 
     }
-    const deleteForm = () => {
-      formSection.style.top = "-700px"
+    function showJobForm() {
+      fieldsdiv.style.display = "flex"
+
     }
+    // const deleteForm = () => {
+    //   formSection.style.top = "-700px"
+    // }
 
   </script>
 </body>

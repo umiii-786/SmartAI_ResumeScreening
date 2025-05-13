@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+  <style>
+   
+  </style>
 </head>
+
 <body>
 
-    
-    <!-- Login form -->
-    <form action="" method="post" id="Login">
-        <!-- Left section of the form -->
-        <div class="left">
-          <div>
-            <!-- Welcome message and registration link -->
-            <p>Hello, Welcome!</p>
-            <a href="">Don't have an account? </a>
-         
-            <a href="/register"  class="redirectButton">Register</a>
-          </div>
-        </div>
   
-        <!-- Right section of the form -->
-        <div class="right">
-          <div>
-            <!-- Login heading -->
-            <h1>Login</h1>
-  
-            <!-- Username input field -->
-            <input type="text" name="Username" id="" placeholder="Username" />
-            <span class="material-symbols-outlined person"> person </span>
-  
-            <!-- Password input field -->
-            <input type="password" name="Password" id="" placeholder="Password" />
-            <span class="material-symbols-outlined lock"> lock </span>
-  
-            <!-- Forgot password link -->
-            <a href="">Forgot Password?</a>
-  
-            <!-- Login button -->
-            <button type="submit">Login</button>
-  
-            <!-- Social login options -->
-            <!-- <p>or login with social platforms</p> -->
-            
-          </div>
-        </div>
-      </form>
-  
+  <div class="alert"><span>⚠️</span><span class="alertContent"></span> <span class="alertCross" onclick="hideAlert()">X</span></div>
+  <!-- Login form -->
+  <form action="/login" method="post" id="Login">
+    <!-- Left section of the form -->
+    <div class="left">
+      <div>
+        <!-- Welcome message and registration link -->
+        <p>Hello, Welcome!</p>
+        <a href="">Don't have an account? </a>
 
-          
+        <a href="/register" class="redirectButton">Register</a>
+      </div>
+    </div>
+
+    <!-- Right section of the form -->
+    <div class="right">
+      <div>
+        <!-- Login heading -->
+        <h1>Login</h1>
+
+        <!-- Username input field -->
+        <input type="email" name="email" placeholder="Email" class="FieldInputs" />
+        <label class="errorLabel"></label>
+        <!-- <span class="material-symbols-outlined person"> person </span> -->
+
+        <!-- Password input field -->
+        <input type="password" name="Password" placeholder="Password" class="FieldInputs" />
+        <label class="errorLabel"></label>
+        <!-- <span class="material-symbols-outlined lock"> lock </span> -->
+
+        <!-- Forgot password link -->
+        <a href="">Forgot Password?</a>
+
+        <!-- Login button -->
+        <button type="button" onclick="CheckEmpty()">Login</button>
+
+        <!-- Social login options -->
+        <!-- <p>or login with social platforms</p> -->
+
+      </div>
+    </div>
+  </form>
+
+<script src="{{url_for('static', filename='js/loginformValidate.js')}}"></script>
 </body>
+
 </html>
-    
